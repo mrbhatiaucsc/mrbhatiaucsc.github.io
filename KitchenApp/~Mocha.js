@@ -1,4 +1,4 @@
-//~Mocha version 1.0.0 User Data Collection and Managment Script
+//~Mocha version 1.0.1 User Data Collection and Managment Script
 //Copyright 2020 All rights reserved®
 //Backstore: Firebase Firestore
 //Author: Manav Bhatia
@@ -25,7 +25,7 @@ var db = firebase.firestore();
 
 function addUser() {
     var days = []; 
-    var inputs = document.getElementsByName("weekdays"); 
+    var inputs = document.getElementsByClassName("checkbox"); 
     for(i = 0; i < inputs.length; i++){
         if(inputs[i].checked){
             days.push(inputs[i].getAttribute("id"))
@@ -71,18 +71,15 @@ function deleteData(){
 }
 
 function verifyAdmin(){
-    firebase.auth().signInWithEmailAndPassword(document.getElementById("admin-email").value, document.getElementById("admin-auth-key").value).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(document.getElementById("admin-email").value, document.getElementById("admin-password").value).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       window.alert("Error: " + errorCode + errorMessage); 
     });
-    document.getElementById("admin-auth-key").value = '';
+    document.getElementById("admin-password").value = '';
    var user = firebase.auth().currentUser;
     if(user){
-      document.getElementById("sign-out").style.display = "block";
-      document.getElementById("ad-log").style.display = "none";
-      document.getElementById("login-drop-down").style.display = "none";
-      document.getElementById("clear-db").style.display = "block";
+      
     } else {
         console.log("ur a failure");
     }

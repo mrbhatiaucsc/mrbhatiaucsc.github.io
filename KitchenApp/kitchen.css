@@ -1,0 +1,285 @@
+body {
+  background: #22223B;
+}
+
+.navbar{
+  margin-top: 20px;
+}
+
+.menu-items {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 10px;
+
+  color: #F2E9E4;
+}
+
+.sign-up {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #4A4E69 !important;
+  background: #F2E9E4;
+}
+
+.sign-up:hover {
+  background-color: aliceblue;
+}
+
+.menu-title {
+  font-family: Allura;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 120px;
+  color: #F2E9E4;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.check-in-pallate {
+  position: relative;
+  width: 1100px;
+  height: 948px;
+  margin: auto;
+  margin-top: -13%;
+  
+  background: #9A8C98;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pallate-top-bar {
+  position: relative;
+  width: 80%;
+  height: 0px;
+  top: 6em;
+  
+  border: 5px solid #22223B;
+}
+
+.menu {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.reservation {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.reservation-title {
+  font-family: Noto Serif TC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 69px;
+
+  color: #F2E9E4;
+
+}
+
+.reservation-name {
+  background: #9A8C98;
+  border: 1px solid #F2E9E4;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 25%;
+  margin-top: 30px;
+}
+
+.reservation-name-label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  
+  color: #F2E9E4;
+
+}
+
+.day-checkboxes {
+  margin-top: 30px; 
+}
+
+.day-checkboxes input {
+  width: 24px;
+  height: 24px;
+  
+  background: #F2E9E4;
+}
+
+.day-checkboxes label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 5px;
+
+  color: #22223B;
+}
+
+.check-in {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.check-in-button {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 70px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  transition: all 0.5s;
+
+  color: #22223B;
+
+  background: #A8C9A7;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); 
+}
+
+.check-in-button span {
+  margin-top: 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.check-in-button:hover span {
+  padding-right: 20px;
+}
+
+.check-in-button span:after {
+  content: '\00bb';
+  opacity: 0;
+  right: -20px;
+}
+
+.check-in-button:hover span:after {
+  opacity: 1;
+}
+
+.confirmation {
+  margin-top: 100px;
+  text-align: center;
+  align-content: center;
+}
+
+.check-button {
+  transition: 0.5s;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #F2E9E4;
+  background: #4A4E69;
+  
+}
+
+.check-button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  line-height: 1px;
+  margin-top: 30px;
+  
+  color: #F2E9E4;
+}
+
+.last-line {
+  display: inline;
+}
+
+/*ABOUT HTML SPECIFIC CSS*/
+
+.about-block {
+  background: #C9ADA7;
+  width: 50%;
+  height: 60%;
+  margin: auto;
+}
+
+.about-text {
+  font-family: Noto Serif TC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 69px;
+
+  color: #F2E9E4;
+}
+
+/*LOGIN HTML SPECIFIC CSS*/
+
+.login {
+  background: #9A8C98;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-title {
+  text-align: center;
+  font-family: Noto Serif TC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  
+  color: #F2E9E4;
+}
+
+.email {
+  background: #F2E9E4
+}
+
+.sign-in-admin {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #F2E9E4;
+  background: #4A4E69;
+}
