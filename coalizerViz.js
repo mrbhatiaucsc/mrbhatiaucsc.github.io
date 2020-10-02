@@ -21,35 +21,41 @@ var svg = d3.select("body").append("svg")
     //translate the svg by the margins
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var aScale = d3.scaleLinear().range([0.0, 700]).domain([0.0, 1.0]);
-var bScale = d3.scaleLinear().range([0.0, 700]).domain([1.0, 0.0]);
-var uScale = d3.scaleLinear().range([0.0, 450/6]).domain([1.0, 0.0]);
+var partyLabelTT = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
-var tickData = {
-  0: "0.0 / 1.0",
-  0.5: "0.5",
-  1: "0.0 / 1.0"
-}
+d3.json("sweden2014ches.json").then(function(nodes){
+  var blocks = nodes.length;
+  
+  var aScale = d3.scaleLinear().range([0.0, 700]).domain([0.0, 1.0]);
+  var bScale = d3.scaleLinear().range([0.0, 700]).domain([1.0, 0.0]);
+  var uScale = d3.scaleLinear().range([0.0, 450/blocks]).domain([1.0, 0.0]);
 
-var alphaAxis = d3.axisTop().scale(aScale).tickPadding(2);
-var betaAxis = d3.axisBottom().scale(bScale).tickPadding(2);
-var utilityAxis = d3.axisRight().scale(uScale).ticks(3).tickFormat(function(d){ return tickData[d] });
+  var tickData = {
+    0: "0.0 / 1.0",
+    0.5: "0.5",
+    1: "0.0 / 1.0"
+  }
 
-var outline = svg.selectAll("rect")
-      .data("A")
-      .enter()
-      .append("g")
-      .append("rect")
-      .attr("width", 1000)
-      .attr("height", 500)
-      .style("stroke", "black")
-      .style("fill", "none")
-      .style("stroke-width", "3px");
+  var alphaAxis = d3.axisTop().scale(aScale).tickPadding(2);
+  var betaAxis = d3.axisBottom().scale(bScale).tickPadding(2);
+  var utilityAxis = d3.axisRight().scale(uScale).ticks(3).tickFormat(function(d){ return tickData[d] });
 
-d3.json("coalizerViz.json").then(function(nodes){
+  var outline = svg.selectAll("rect")
+        .data("A")
+        .enter()
+        .append("g")
+        .append("rect")
+        .attr("width", 1000)
+        .attr("height", 500)
+        .style("stroke", "black")
+        .style("fill", "none")
+        .style("stroke-width", "3px");
+
   var yPos = 25;
   var xPos = 150;
-  var shadeColor = "none"; 
+  var shadeColor = "white";
   nodes.forEach(function(d, i){
     xPos = 150;
     svg.append("g")
@@ -60,23 +66,43 @@ d3.json("coalizerViz.json").then(function(nodes){
       if(d.coalitionShade[j]){
         shadeColor = "lightgrey";
       } else {
-        shadeColor = "none";
+        shadeColor = "white";
       }
-      svg.append("rect")
+      var block = svg.append("rect")
         .attr("x", xPos)
         .attr("y", yPos)
         .attr("width", (aScale(d.ranges[j+1]) - aScale(d.ranges[j])))
-        .attr("height", 450/6)
+        .attr("height", 450/blocks)
         .style("fill", shadeColor)
         .style("stroke-width", "1px")
-        .style("stroke", "black")
-        .style("text", c);
+        .style("stroke", "black");
       
-      svg.append("text")
+      if(d.ranges[j+1]-d.ranges[j] <= 0.05){
+          block.on("mouseover", function(d){
+            console.log(c);
+            partyLabelTT.transition()
+            .duration(200)
+            .style("opacity", 1); 
+            partyLabelTT.html("<p style='text-align:center;'>" + c + "<p/>")
+                    //set x and y pos using style and use the d3.event to track pan drag zoom movement and update pos of tooltip
+                    .style("top", (d3.event.pageY - 10) + "px")		
+                    .style("left", (d3.event.pageX +10) + "px");	
+            console.log(d3.event.pageY);
+          })
+          .on("mouseout", function(d){
+              partyLabelTT.transition()
+                  .duration(200)
+                  .style("opacity", 0); 
+          }); 
+      }
+      
+      if(d.ranges[j+1]-d.ranges[j] > 0.05){
+        svg.append("text")
         .text(c)
         .attr("x", xPos+3)
         .attr("y", yPos+15)
-        .style("font-size", 12)
+        .style("font-size", 12);
+      }
   
       if(c != "Opposition"){
         svg.append("line")
@@ -95,9 +121,9 @@ d3.json("coalizerViz.json").then(function(nodes){
     svg.append("text")
       .text(d.name)
       .attr("x", 75)
-      .attr("y", yPos + (450/6)/2);
+      .attr("y", yPos + (450/blocks)/2);
     
-    yPos += 450/6;
+    yPos += 450/blocks;
   })
       
 

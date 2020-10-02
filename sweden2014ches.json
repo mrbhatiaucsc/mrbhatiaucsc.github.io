@@ -1,0 +1,66 @@
+[
+  {
+    "name": "VP",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "VSMF", "VSMK"],
+    "coalitionShade": [false, false, false],
+    "ranges": [0.0, 0.62, 0.92, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.09, 0.12]
+  },
+  {
+    "name": "SAP",
+    "coalitions": 1,
+    "coalitionNames": ["Opposition", "VSMK"],
+    "coalitionShade": [false, false],
+    "ranges": [0.0, 0.05, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.64]
+  },
+  {
+    "name": "MP",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "VSMF", "VSMK"],
+    "coalitionShade": [false, false, false],
+    "ranges": [0.0, 0.35, 0.97, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.13, 0.14]
+  },
+  {
+    "name": "CP",
+    "coalitions": 4,
+    "coalitionNames": ["Opposition", "VMCFKM", "SMCF", "SMCK", "VSCF"],
+    "coalitionShade": [false, false, false, false, false],
+    "ranges": [0.0, 0.54, 0.76, 0.87, 0.98, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.05, 0.08, 0.11, 0.12]
+  },
+  {
+    "name": "FP",
+    "coalitions": 4,
+    "coalitionNames": ["Opposition", "VMCFKM", "SMCF", "MFMS", "VSCF"],
+    "coalitionShade": [false, false, false, false, false],
+    "ranges": [0.0, 0.55, 0.81, 0.90, 0.96, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.05, 0.08, 0.09, 0.1]
+  },
+  {
+    "name": "KD",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "CFKMS", "SKS"],
+    "coalitionShade": [false, false, false],
+    "ranges": [0.0, 0.57, 0.81, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.04, 0.09]
+  },
+  {
+    "name": "MS",
+    "coalitions": 3,
+    "coalitionNames": ["Opposition", "CFKMS", "MFMS", "VCMS"],
+    "coalitionShade": [false, false, false, false],
+    "ranges": [0.0, 0.14, 0.61, 0.93, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.24, 0.43, 0.47]
+  },
+  {
+    "name": "SD",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "SKS", "VCMS"],
+    "coalitionShade": [false, false, false],
+    "ranges": [0.0, 0.41, 0.98, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.26, 0.27]
+  }
+]
