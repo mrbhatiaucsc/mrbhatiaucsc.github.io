@@ -1,7 +1,59 @@
+
 .tooltip {
-  background-color: darkgray;
-  color: white;
-  padding: 2px;
-  width: 100px;
+  background-color: #e6ffe6;
+  border-radius: 5px;
+  padding: 3px;
+  width: auto;
   position: absolute;
+}
+
+p {
+  margin: 0;
+}
+
+.legend {
+  width: 50%;
+  height: 450px;
+  margin-left: 70px;
+  align-content: center;
+  border: 2px;
+  border: solid;
+  padding: 5px;
+}
+
+.title {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  
+}
+
+.white-box {
+  background-color: white;
+  width: 30%;
+  height: 50px;
+  border: 1px;
+  border: solid;
+  text-align: left;
+}
+
+.shaded-box {
+  background-color: lightgrey;
+  width: 30%;
+  height: 50px;
+  border: 1px;
+  border: solid;
+  text-align: left;
+}
+
+.dotted-line {
+  position: relative;
+  border-top: 1px dotted black;
+  transform: rotate(-5deg);
+  width: 30%px;
+  transform-origin: 125%;
+}
+
+li {
+  padding: 5px;
 }

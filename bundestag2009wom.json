@@ -1,0 +1,42 @@
+[
+  {
+    "name": "CDU/CSU",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "CF", "CL"],
+    "coalitionShade": [false, true, false],
+    "ranges": [0.0, 0.29, 0.8, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.52, 0.75]
+  },
+  {
+    "name": "SPD",
+    "coalitions": 1,
+    "coalitionNames": ["Opposition", "SFL"],
+    "coalitionShade": [false, true],
+    "ranges": [0.0, 0.41, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.46]
+  },
+  {
+    "name": "FDP",
+    "coalitions": 2,
+    "coalitionNames": ["Opposition", "CF", "SFL"],
+    "coalitionShade": [false, true, true],
+    "ranges": [0.0, 0.51, 0.92, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.23, 0.29]
+  },
+  {
+    "name": "Linke",
+    "coalitions": 1,
+    "coalitionNames": ["Opposition", "SFL"],
+    "coalitionShade": [false, true],
+    "ranges": [0.0, 0.61, 1.0],
+    "utilityRanges": [0.0, 0.0, 0.24]
+  },
+  {
+    "name": "Grüne",
+    "coalitions": 0,
+    "coalitionNames": ["Opposition"],
+    "coalitionShade": [false],
+    "ranges": [0.0, 1.0],
+    "utilityRanges": [0.0, 0.0]
+  }
+]
