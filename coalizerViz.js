@@ -112,25 +112,23 @@ d3.json("bundestag2009wom.json").then(function(nodes){
         .style("stroke-width", "1px")
         .style("stroke", "black");
       
-      if(d.ranges[j+1]-d.ranges[j] <= 0.05 || d.coalitionShade[j]){
-          block.on("mouseover", function(e){
-            console.log(c);
-            partyLabelTT.transition()
-            .duration(200)
-            .style("opacity", 1); 
-            partyLabelTT.html("<div class='ttip'><p style='text-align:center;'><b>" + c + "</b></p><p>Office Range: " + 
-                             d.ranges[j] + " - " + d.ranges[j+1] + "</p><p>Policy Range: " + (1 - d.ranges[j]).toFixed(2) + " - " + (1 - d.ranges[j+1]).toFixed(2) + "</p></div>")
-                    //set x and y pos using style and use the d3.event to track pan drag zoom movement and update pos of tooltip
-                    .style("top", (d3.event.pageY + 450/blocks) + "px")		
-                    .style("left", (d3.event.pageX +10) + "px");	
-            console.log(d3.event.pageY);
-          })
-          .on("mouseout", function(d){
-              partyLabelTT.transition()
-                  .duration(200)
-                  .style("opacity", 0); 
-          }); 
-      }
+      block.on("mouseover", function(e){
+        console.log(c);
+        partyLabelTT.transition()
+        .duration(200)
+        .style("opacity", 1); 
+        partyLabelTT.html("<div class='ttip'><p style='text-align:center;'><b>" + c + "</b></p><p>Office Range: " + 
+                         d.ranges[j].toFixed(2) + " - " + d.ranges[j+1].toFixed(2) + "</p><p>Policy Range: " + (1 - d.ranges[j]).toFixed(2) + " - " + (1 - d.ranges[j+1]).toFixed(2) + "</p></div>")
+                //set x and y pos using style and use the d3.event to track pan drag zoom movement and update pos of tooltip
+                .style("top", (d3.event.pageY + 450/blocks) + "px")		
+                .style("left", (d3.event.pageX +10) + "px");	
+        console.log(d3.event.pageY);
+      })
+      .on("mouseout", function(d){
+          partyLabelTT.transition()
+              .duration(200)
+              .style("opacity", 0); 
+      }); 
       
       if(d.ranges[j+1]-d.ranges[j] > 0.05){
         svg.append("text")
